@@ -1,0 +1,217 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252"><title>ICS 211 Homework 4</title></head>
+<body>
+
+<center><h1>ICS 211 Homework 4</h1></center>
+
+<center><h1>Ordered Linked Lists</h1></center>
+
+This assignment requires you to re-implement Linked Lists.  In particular,
+nodes in your linked list will be ordered such that objects are stored
+in alphabetical order.  This makes your linked list an ordered
+linked list.
+
+<p> Each ordered linked list is generic, that is, stores objects of
+type <tt>E</tt>, where <tt>E</tt> is a parameter to the class.  However,
+these linked lists also store, for each object, a string identifying
+the object.  We refer to this string as the object's <b>key</b>.
+
+</p><p>Each linked list node must therefore have three fields (instead
+of the two in a normal linked list node): the object being stored,
+its key, and the <tt>next</tt> reference.
+
+</p><p>The nodes in the linked list are kept in order of increasing
+key value.  For example, the object with key "abc" must be stored in a
+node that is before any node with key "xyz".  Keys will be unique.
+Keys are compared using the
+<a href="http://download.oracle.com/javase/6/docs/api/java/lang/String.html#compareToIgnoreCase%28java.lang.String%29">
+<tt>String.compareToIgnoreCase</tt></a> method of the class <tt>String</tt>.
+This method returns 0 if the two strings are equal, a negative number if this
+string is less than the argument, and a positive number otherwise.
+
+</p><p>You must implement three classes:
+
+</p><ul>
+
+<li> the <tt>KeyedNode</tt> class as a private class of
+<tt>OrderedLinkedList</tt>,
+</li><li> the <tt>OrderedLinkedList</tt> class, and 
+</li><li> another class called <tt>AddressList</tt> that implements an address
+book similar to what might be found in your cellphone.
+</li></ul>
+
+<p> The <tt>AddressList</tt> is used for testing only, and there is no
+need to turn it in.
+
+</p><p> The <tt>OrderedLinkedList</tt> class
+must provide at least the following methods:
+</p><ul>
+<li> A no-arguments constructor <tt>public OrderedLinkedList()</tt> class
+to create an empty ordered linked list.
+</li><li> <tt>int size();</tt> Returns the number of elements in the
+linked list.
+</li><li> <tt>E add(String key, E value);</tt>  If the list does not
+already contain the given key, the key and value are added to the
+linked list, and <tt>add</tt> returns <tt>null</tt>.
+<br> Otherwise,
+the existing object with the given key is replaced with the new
+object (and the new key), and <tt>add</tt> returns the old (removed)
+object.
+</li><li> <tt>E find(String key);</tt> Returns the matching object if
+the corresponding key is in the ordered linked list, and <tt>null</tt>
+otherwise.
+</li><li> <tt>E get(int position);</tt> Returns the object at the given position,
+as long as the index is valid. Otherwise, it returns
+<tt>null</tt> 
+(this is unlike the standard <tt>get</tt>, which throws an exception if
+the index is invalid).
+</li></ul>
+
+Adding an object to the linked list must add it at the correct position.
+
+<p>Finding a given key k should search through the linked list.  If
+a key is found that is greater than k, the search can stop, since the
+linked list is ordered and only other keys greater than k will follow
+this one.
+
+</p><p>Your address book class is not graded, so the details are up to you.
+
+I would suggest that your address book class provide a user interface
+that allows a user to:
+</p><ul>
+<li> add a (name, telephone number) pair into the address book.  The
+name is used as the key.
+If the name replaces a pre-existing name, print an appropriate message.
+</li><li> search for a name in the address book, printing either the name and
+telephone number, or reporting that the name is not in the address book.
+</li><li> display the contents of the entire address book.  This is done by
+calling <tt>get</tt> with increasing index, until the end of the ordered
+linked list is reached.
+</li></ul>
+
+<!-- <p>The address book class should have a private inner class that -->
+<!-- defines the data stored in the address book.  That data must -->
+<!-- have names and telephone numbers, but may have more information, -->
+<!-- such as email addresses. -->
+
+<p>The details of the user interface are up to you.  At the very least,
+you could print a prompt and have a user enter the command (one of
+the strings "add", "find", or "print"), then ask for the appropriate parameters
+for each.  Or if you prefer, you can open a window to get the input from
+the user and report on the results.
+
+</p><h2>Sample interaction</h2>
+
+If using prompts and commands, your program could behave as follows.
+The parts your program prints are in <tt>this font</tt>, the user input
+is in <i>this font</i>.
+
+<p>
+
+<tt> Starting program, address book is empty. </tt>
+<br><tt> enter one of: add, find, print, quit. </tt><i>add</i>
+<br><tt> enter name to add. </tt><i>Hello World</i>
+<br><tt> enter telephone number for 'Hello World'. </tt><i>1-800-555-0101</i>
+</p><pre>'Hello World' added to telephone book, with number 1-800-555-0101
+</pre>
+<tt> The address book has 1 entry.</tt>
+<br><tt> enter one of: add, find, print, quit. </tt><i>find</i>
+<br><tt> enter name to search for. </tt><i>hello world</i>
+<pre>'Hello World' was found, number is 1-800-555-0101
+</pre>
+<tt> The address book has 1 entry.</tt>
+<br><tt> enter one of: add, find, print, quit. </tt><i>find</i>
+<br><tt> enter name to search for. </tt><i>foo</i>
+<pre>'foo' was not found
+</pre>
+<tt> The address book has 1 entry.</tt>
+<br><tt> enter one of: add, find, print, quit. </tt><i>add</i>
+<br><tt> enter name to add. </tt><i>hello world</i>
+<br><tt> enter telephone number for 'hello world'. </tt><i>1-800-555-0105</i>
+<pre>'hello world' added to telephone book, with number 1-800-555-0105
+previous phone number for 'Hello World' was 1-800-555-0101.
+</pre>
+<tt> The address book has 1 entry.</tt>
+<br><tt> enter one of: add, find, print, quit. </tt><i>add</i>
+<br><tt> enter name to add. </tt><i>foo</i>
+<br><tt> enter telephone number for 'foo'. </tt><i>1-800-555-0102</i>
+<pre>'foo' added to telephone book, with number 1-800-555-0101
+</pre>
+<tt> The address book has 2 entries.</tt>
+<br><tt> enter one of: add, find, print, quit. </tt><i>print</i>
+<pre>'foo'  1-800-555-0102
+'Hello World'  1-800-555-0101
+</pre>
+<tt> The address book has 2 entries.</tt>
+<br><tt> enter one of: add, find, print, quit. </tt><i>quit</i>
+<pre>quit, discarding contents of address book.
+</pre>
+
+<p> Note that "Hello World", with uppercase letters, is replaced by
+"hello world" written with lowercase letters.  Using the
+<a href="http://download.oracle.com/javase/6/docs/api/java/lang/String.html#compareToIgnoreCase%28java.lang.String%29">
+<tt>String.compareToIgnoreCase</tt></a> method, the two appear to
+be the same, that is, the comparison returns 0, but displaying the values
+shows that they are not identical.
+
+</p><p>Also note that when printing, the names are returned in alphabetical
+order, since the linked list is ordered.
+
+</p><h2>Optional Extension</h2>
+
+<p> If you want to make your address book code more useful, you may
+extend it as follows.  This is for your own personal enjoyment and use,
+and no extra credit will be given.
+
+</p><p> Add the following method to the Ordered Linked List class:
+</p><ul>
+<li> <tt>E remove(String key);</tt> Behaves as <tt>find</tt>, but
+also removes the object if it is found.
+</li></ul>
+
+<p> Also add operations to your address book class.  In particular, you
+can allow the user to:
+</p><ul>
+<li> save the contents of the address book into a file.
+</li><li> create a new address book from the contents of a previously saved file
+(this should only be allowed initially, when the address book is still
+empty).  Each name is read from the file and saved into the
+linked list.  The file format is up to you, as long as all the information
+originally in the address book is correctly restored.
+</li><li> remove a name from the address book, printing whether the name was
+successfully found and removed.
+</li></ul>
+
+<p>
+You can define a private inner class to store whatever values you want
+in your address book.  The values should include names and telephone
+numbers, but may have more information, such as email addresses.
+
+</p><p> This private inner class can have a constructor that creates an
+address book entry given a string (say, a line read from a file), and
+a <tt>toString()</tt> method that produces a string that can be stored
+in a file.  This allows you to make your address book persistent.
+
+</p><p>Both saving the address book, and printing it, are accomplished
+by calling <tt>get</tt> repeatedly, once for each entry in the address
+book, and calling <tt>toString()</tt> for each object.  You may use
+<tt>toString()</tt> to give you the data to save in the file, or you
+may have a different method such as <tt>toFileString()</tt>.  What is
+important is that you have a constructor that takes the output of
+<tt>toString()</tt> or <tt>toFileString()</tt> and gives you a new
+address book entry.
+
+</p><h2>Turning in the Assignment</h2>
+
+<p> You are only required to turn in the one file containing the
+<tt>OrderedLinkedList</tt> class and its inner <tt>KeyedNode</tt> class.
+
+</p><ol>
+<li> <a href="http://www2.hawaii.edu/%7Epsoulier/211/">here</a> for Section 1.
+</li><li> <a href="https://github.com/anthonyjchriste/ics211f13/wiki/Assignment-Policy">here</a> for Section 2.
+</li></ol>
+
+<p> The TAs can be reached <a href="http://www2.hawaii.edu/%7Eesb/2013fall.ics211/ta-oh.html">here</a>.
+
+
+</p></body></html>

@@ -1,0 +1,16 @@
+***********************
+Size of the list: 4
+***********************
+
+Name: ana
+Tel: 2345
+
+Name: dave
+Tel: 35646
+
+Name: ehsan
+Tel: 23423
+
+Name: sareh
+Tel: 54746
+

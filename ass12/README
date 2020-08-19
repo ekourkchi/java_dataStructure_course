@@ -1,0 +1,89 @@
+
+This package contains only two java files which do the decompression job properly.
+
+1) HuffDecompress.java
+/**************************************************************************
+  The Main class which Decompresses the Huffman compressed file (.huff)
+  (Written for HW12) ...  If filename ends in .huff, will decompress.
+***************************************************************************/
+	        /** 
+		* @author               Ehsan Kourkchi
+		* @lecture              ICS 211 Desember 2013
+		* @date                 Desember 6, 2013
+		* @class name           public class HuffDecompress
+		*/
+/***************************************************************************/
+
+
+
+
+2) HuffTree.java
+/**************************************************************************
+  An implementation of a Huffman binary Tree for HW12
+***************************************************************************/
+
+
+
+
+
+
+
+***************************************************************************/
+How to run ...
+***************************************************************************/
+
+$ java HuffDecompress test.txt.huff
+
+Input file-name:  test.txt.huff
+Output file-name: test.txt
+The size of uncompressed file is 103 bytes.
+
+
+Decompressed file is saved as "test.txt" successfully ....
+
+
+
+$ - 
+
+***************************************************************************/
+What you see in the case of using wrong argument ...
+***************************************************************************/
+$ java HuffDecompress
+
+NAME
+  HuffDecompress -- This program decompresses files that were compressed
+  using Huffman encoding. It just gets the name of the compressed file as the only argument ... 
+
+SYNOPSIS
+  $ java HuffDecompress inputfile
+
+DESCRIPTION
+  If filename ends in '.huff', will decompress.
+  It removes the '.huff' extension from the output decompressed file.
+
+
+AUTHOR
+  Ehsan Kourkchi (C) 2013  <ehsan@ifa.hawaii.edu> 
+
+  
+$ - 
+
+
+***************************************************************************/
+What if the outfile is already exists ...
+It asks user to enter another name, or decides to replace the file ...
+***************************************************************************/
+$ java HuffDecompress test.txt.huff 
+
+Input file-name:  test.txt.huff
+Output file-name: test.txt
+The size of uncompressed file is 103 bytes.
+
+The file "test.txt" exists, Overwrite (Y/N)? N
+
+Please enter the output file name: myfile.txt
+
+Decompressed file is saved as "myfile.txt" successfully ....
+  
+$ - 
+

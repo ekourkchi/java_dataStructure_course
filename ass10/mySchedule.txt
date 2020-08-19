@@ -1,0 +1,29 @@
+0: adding sleep with deadline 80 and duration 80
+0: adding breakfast with deadline 90 and duration 5
+0: busy with sleep with deadline 80 and duration 80
+80: done with sleep
+80: busy with breakfast with deadline 90 and duration 5
+85: done with breakfast
+85: adding email with deadline 100 and duration 20
+85: busy with email with deadline 100 and duration 20
+105: adding email with deadline 100 and duration 5
+100: adding dinner with deadline 190 and duration 10
+100: adding lunch with deadline 130 and duration 5
+100: adding exercise with deadline 180 and duration 20
+100: adding class with deadline 150 and duration 12
+100: adding study with deadline 120 and duration 10
+100: adding studyAgain with deadline 240 and duration 30
+100: busy with email with deadline 100 and duration 5
+105: done with email (late)
+105: busy with study with deadline 120 and duration 10
+115: done with study
+115: busy with lunch with deadline 130 and duration 5
+120: done with lunch
+120: busy with class with deadline 150 and duration 12
+132: done with class
+132: busy with exercise with deadline 180 and duration 20
+152: done with exercise
+152: busy with dinner with deadline 190 and duration 10
+162: done with dinner
+162: busy with studyAgain with deadline 240 and duration 30
+192: done with studyAgain

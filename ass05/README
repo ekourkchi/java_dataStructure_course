@@ -1,0 +1,54 @@
+/**
+ * 
+ * @Author: Ehsan Kourkchi
+ * @Date: October 2013
+ * @ICS 211
+
+This package includes the following files:
+
+ 1) @DoubleLinkedNode.java
+      @DoubleLinkedNode<E>   // definition of a sigle node
+
+ 2) @CircularDoubleLinkedList.java
+      @CircularDoubleLinkedList<E>   // definition of the circular linked list
+        @CircularDoubleIterator      // definition of the ListIterator that spans CircularDoubleLinkedList
+  
+ 3) @Josephus.java
+      @testList
+      @main    // This test the implementation of the Josephus problem using testList method
+  
+ 4) @Test.java
+      @main   // This method tests "Josephus.testList" for few different cases
+
+ 5) @MyTestDriver.java
+      @main  // This calss tests all methods in "CircularDoubleLinkedList"
+
+     
+     
+ * NOTE: To test the Josephus "testList" you can either run "Josephus.java" or "Test.java"
+ 
+ ***** ***** ***** ***** *****
+ How I tested the program:
+ ***** ***** ***** ***** *****
+ 
+ 1) The single node class was created and all of its methods were tested.
+ 
+ 2) The CircularDoubleLinkedList object and its vital methods created. The main method of this
+ object were tested using "MyTestDriver.java".
+ 
+ 3) The CircularDoubleLinkedList inner class which enable this object to have iterator was then created. This inner
+ class is called "CircularDoubleIterator"
+ 
+ 4) All methods of this class was then tested using "MyTestDriver.java".
+ The strategy was to add and remove the elements using the iterator methods. Then by using next() and previous()
+ methods, iterator is put at different positions and the returned values are checked.
+ 
+ 5) By using the iterator nextIndex() and/or previousIndex(), I checked whether the the iterator index points at the 
+ right element.
+ 
+ 6) After checking and debugging all methods of the CircularDoubleLinkedList and its iterator, I implementated the 
+ Josephus problem in "Josephus.testList".
+ 
+ 7) To test the Josephus "testList" you can either run "Josephus.java" or "Test.java"
+
+    */

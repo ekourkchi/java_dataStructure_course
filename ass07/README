@@ -1,0 +1,164 @@
+***************************
+Author: Ehsan Kourkchi
+Date: October 2013
+***************************
+
+File: LinkedQueue.java
+Main class: LinkedQueue
+Public methods: 
+    public ArrayQueue()  // constructor
+    public boolean offer(E value)
+    public E poll()
+    public boolean add(E value)
+    public E peek()
+    public E element() throws NoSuchElementException
+    public E remove() throws NoSuchElementException
+    public void toPrint()
+   
+***************************
+File: ArrayQueue.java
+Main class: ArrayQueue
+Public methods: 
+    public ArrayQueue()  // constructor
+    public boolean offer(E value)
+    public E poll()
+    public boolean add(E value)
+    public E peek()
+    public E element() throws NoSuchElementException
+    public E remove() throws NoSuchElementException
+    public void toPrint()
+
+***************************
+TESTING program ... Testing two above classes for offer and poll methods.
+File: TestLinkedQueue.java
+Public Method: main()
+
+
+Results which is displayed on the screen: 
+
+
+
+ *****************************
+ + This unit test just examine 'offer' and 'poll' 
+ methods as it is asked by the assignment.
+
+ + Nevertheless, the otehr usuall queque methods 
+ are provided as well.
+ *****************************
+ *****************************
+
+*****************************
+*****************************
+Testing the "LinkedQueue" class 
+containing strings. 
+Note: This is a generic class.
+*****************************
+*****************************
+
+Queque is empty.
+
+1) Offering "Ehsan" returns: true
+The queue element(s): "Ehsan"    size= 1
+
+2) Offering "Sean" returns: true
+The queue element(s): "Ehsan"  "Sean"    size= 2
+
+*** Offering values which alreay exists in the queque ***
+
+3) Offering "Ehsan" returns: false
+The queue element(s): "Ehsan"  "Sean"    size= 2
+
+4) Offering "Sean" returns: false
+The queue element(s): "Ehsan"  "Sean"    size= 2
+
+*** Offering NULL value ***
+
+5) Offering "null" returns: false
+The queue element(s): "Ehsan"  "Sean"    size= 2
+
+*** polling ***
+
+6) Polling returns: Ehsan
+The queue element(s): "Sean"    size= 1
+
+7) Polling returns: Sean
+The queue element(s): Empty, size= 0
+
+*** polling from an empty queque ***
+
+8) Polling returns: null
+The queue element(s): Empty, size= 0
+
+
+*****************************
+*****************************
+Testing the "ArrayQueue" class 
+containig Integer. 
+Note: This is a generic class.
+*****************************
+*****************************
+
+*** Queque is empty ***
+
+9) Offering "10" returns: true
+The queue element(s): "10"    size= 1
+
+10) Offering "2" returns: true
+The queue element(s): "10"  "2"    size= 2
+
+*** Offering values which alreay exists in the queque ***
+
+11) Offering "10" returns: false
+The queue element(s): "10"  "2"    size= 2
+
+12) Offering "2" returns: false
+The queue element(s): "10"  "2"    size= 2
+
+*** Offering NULL value ***
+
+13) Offering "null" returns: false
+The queue element(s): "10"  "2"    size= 2
+
+14) Offering "5,2,4,3,7,14,1,23,100" values consequently ***
+The queue element(s): "10"  "2"  "5"  "4"  "3"  "7"  "14"  "1"  "23"  "100"    size= 10
+"2" is not added since it is still in the queque 
+
+15) Offering "200" when the queque is full
+Offering "200" returns: false
+The queue element(s): "10"  "2"  "5"  "4"  "3"  "7"  "14"  "1"  "23"  "100"    size= 10
+"200" is not added since queque is full 
+
+*** polling ***
+
+16) Polling returns: 10
+The queue element(s): "2"  "5"  "4"  "3"  "7"  "14"  "1"  "23"  "100"    size= 9
+
+17) Polling returns: 2
+The queue element(s): "5"  "4"  "3"  "7"  "14"  "1"  "23"  "100"    size= 8
+
+*** polling from an empty queque ***
+
+18) Polling returns: 5
+The queue element(s): "4"  "3"  "7"  "14"  "1"  "23"  "100"    size= 7
+
+19) Offering "2" returns: true
+The queue element(s): "4"  "3"  "7"  "14"  "1"  "23"  "100"  "2"    size= 8
+"2" is at the end of the queque, since it is got removed in previous task.
+
+20) Polling all queque elements
+The queue element(s): Empty, size= 0
+
+*** Queque is empty ***
+*** polling from an empty queque ***
+
+21) Polling returns: null
+The queue element(s): Empty, size= 0
+
+
+
+
+
+
+
+ 
+

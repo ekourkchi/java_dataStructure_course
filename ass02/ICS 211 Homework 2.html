@@ -1,0 +1,111 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252"><title>ICS 211 Homework 2</title></head>
+<body>
+
+<center><h1>ICS 211 Homework 2</h1></center>
+
+<center><h1>Classes and Interfaces</h1></center>
+
+Write each of the following:
+
+<ul>
+<li> A class <tt>Point</tt> to represent points in a two-dimensional
+plane.  Each point has an x and a y coordinate, determined at creation
+time, and provides at least the following methods:
+<ul>
+<li> <tt>double getX();  // return x-coordinate of point</tt>
+</li><li> <tt>double getY();  // return y-coordinate of point</tt>
+</li><li> <tt>double distance(Point other);
+// computes and returns the distance from this point to another point</tt>
+</li><li> <tt>String toString();  // returns the string "(x,y)" </tt>
+</li></ul>
+The distance between two points is given by the square root of
+(x<sub>1</sub> - x<sub>2</sub>)<sup>2</sup> + 
+(y<sub>1</sub> - y<sub>2</sub>)<sup>2</sup>
+<p>
+If you find it helpful for the rest of the assignment, you may implement
+in this class additional methods beyond the ones required above.
+
+</p><p>
+</p></li><li> An interface <tt>SegmentInterface</tt> to represent line segments in the
+two-dimensional plane.  Each line segment has two endpoints, initialized at
+creation time, and provides at least the following methods:
+<ul>
+<li> <tt>Point left();   // the point at the left end of the segment </tt>
+</li><li> <tt>Point right();  // the point at the right end of the segment </tt>
+</li><li> <tt>Point upper();  // the point at the upper end of the segment </tt>
+</li><li> <tt>Point lower();  // the point at the lower end of the segment </tt>
+</li><li> <tt>double length();
+// the length of the segment, that is, the distance between its endpoints</tt>
+</li></ul>
+For horizontal segments the <tt>upper</tt> and <tt>lower</tt>
+methods may return either endpoint, and for vertical segments the
+<tt>left</tt> and <tt>right</tt> methods may also return either endpoint.
+
+<p>
+
+</p></li><li> A class <tt>Segment</tt> that implements <tt>SegmentInterface</tt>,
+and also provides these additional methods:
+<ul>
+<li> <tt>boolean isHorizontal();</tt>
+</li><li> <tt>boolean isVertical();</tt>
+</li><li> <tt>void move(Point newLowerOrLeft);</tt>
+</li><li> <tt>String toString();</tt>
+</li></ul>
+The <tt>move</tt> method changes the position of the entire segment
+by moving the lower point to the new position.  In other words, the
+entire segment moves, without changing its length or angle, so that the
+lower point is in the new position.  For horizontal segments (where
+both endpoints have the same y coordinate), it moves the left point
+to the new position.
+
+<p>
+The <tt>toString</tt> method returns the string
+"(x1,y1)(x2,y2)", where (x1,y1) is the lower endpoint of the segment
+(the left endpoint for horizontal segments).
+
+</p><p>
+</p></li><li> A class <tt>CreateSegments</tt> that
+has the following:
+<ul>
+<li> A method <tt>printFour</tt> to print the values of 4 segment
+variables, that is,
+one method that takes four <tt>SegmentInterface</tt> variables
+as parameters and prints all four.
+</li><li> A method <tt>static void unitTest ();</tt> with all of the following:
+</li><li> Two variables declared as <tt>SegmentInterface</tt>, one of them
+with coordinates (1,2)(4,5), the other (1,2)(4,2)
+</li><li> Two variables declared as <tt>Segment</tt>, one of them
+with coordinates (4,5)(4,2), the other (0,0)(7,1.5)
+</li><li> code to:
+<ol>
+<li> print the four segment variables, then 
+</li><li> move the last segment to the left by 5.3 units, so its
+endpoints become (-5.3, 0)(1.7, 1.5), and
+</li><li> print all the segment variables again.
+</li></ol>
+</li></ul>
+
+</li><li> For each class (except <tt>CreateSegments</tt>), you will have to
+provide one or more constructors that take the appropriate parameters,
+as well as a default (no-arguments) constructor that initializes all
+coordinates to zero.
+
+</li><li> In order to test your code, you will have to create a main method
+in a different class.  That main method calls CreateSegment.unitTest();
+<p>
+Do not turn in your main method, or any other test code.
+
+</p></li></ul>
+
+<h2>Turning in the Assignment</h2>
+
+<ol>
+<li> <a href="http://www2.hawaii.edu/%7Epsoulier/211/">here</a> for Section 1.
+</li><li> <a href="https://github.com/anthonyjchriste/ics211f13/wiki/Assignment-Policy">here</a> for Section 2.
+</li></ol>
+
+<p> The TAs can be reached <a href="http://www2.hawaii.edu/%7Eesb/2013fall.ics211/ta-oh.html">here</a>.
+
+
+</p></body></html>

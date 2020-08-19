@@ -1,0 +1,112 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252"><title>ICS 211 Assignment 5</title></head>
+<body>
+
+<center><h1>ICS 211 Assignment 5</h1></center>
+
+<center><h1>Iterators and Linked List removal</h1></center>
+
+This assignment requires you to modify the existing code for <a href="http://www2.hawaii.edu/%7Eesb/2013fall.ics211/LinkedList.java.html">Linked Lists</a>.  Specifically, you
+must take the existing code for Linked Lists, and make it implement the <a href="http://download.oracle.com/javase/6/docs/api/java/lang/Iterable.html">java.lang.Iterable&lt;E&gt;</a>
+interface.  This interface is implemented by any class that
+offers an <tt>iterator()</tt> method of the correct type.
+In implementing your iterator, you may make use of the code in <a href="http://www2.hawaii.edu/%7Eesb/2013fall.ics211/LinkedListIterator.java.html">LinkedListIterator</a>.  However,
+that code does not provide an implementation for the <tt>remove</tt>
+method, so you must provide that implementation.
+
+<p> You must also add to the Linked List class
+the two <tt>remove</tt> methods specified by the
+<a href="http://download.oracle.com/javase/6/docs/api/java/util/List.html">
+List</a>
+interface, and implement them correctly.  You also need to provide
+a <tt>size</tt> method, as specified by the 
+<a href="http://download.oracle.com/javase/6/docs/api/java/util/List.html">
+List</a> interface.
+
+</p><p>You are welcome to adapt the <tt>remove</tt> code from the book.
+
+</p><p> Finally, you must provide a driver program (in a separate class) that
+gives the user the possibility to exercise each of the methods of both the
+LinkedList and the iterator classes.  This could be similar to your
+address book class in assignment 4.  Your driver program should create
+a linked list of strings, and allow operations on that linked list.
+
+</p><p> Specifically, the user must be able to:
+
+</p><ul>
+<li> add a string at the end of the list: <tt>boolean add(E value)</tt>
+</li><li> add a string at an arbitrary position in the list:
+<tt>void add(int index, E value)</tt>
+</li><li> remove a string at an arbitrary position in the list:
+<tt>E remove(int index)</tt>
+</li><li> remove a given string from the list:
+<tt>boolean remove(Object o)</tt>
+</li><li> create an iterator
+</li><li> call <tt>hasNext</tt>, <tt>next</tt>, and <tt>remove</tt> on the
+iterator, showing the results of each call
+</li></ul>
+
+<p> Your driver program should correctly handle any exceptions thrown
+by any of these methods, print an appropriate message, and continue
+operation.
+
+</p><h2>Sample interaction</h2>
+
+If using prompts and commands, your program could behave as follows.
+The parts your program prints are in <tt>this font</tt>, the user input
+is in <i>this font</i>.
+
+<p>
+
+<tt> Starting program, list is empty. </tt>
+<br><tt> enter one of: add, remove, iterator, quit. </tt><i>add</i>
+<br><tt> enter string to add. </tt><i>Hello World</i>
+<br><tt> enter position for string (-1 to add at end). </tt><i>99</i>
+</p><pre>IndexOutOfBoundsException when adding string "Hello World" at position 99.
+</pre>
+<tt> The list is empty.</tt>
+<br><tt> enter one of: add, remove, iterator, quit. </tt><i>add</i>
+<br><tt> enter string to add. </tt><i>Foo</i>
+<br><tt> enter position for string (-1 to add at end). </tt><i>-1</i>
+<pre>add("Foo") returned true
+</pre>
+<tt> The list has one element.</tt>
+<br><tt> enter one of: add, remove, iterator, quit. </tt><i>iterator</i>
+<pre>created an iterator
+</pre>
+<br><tt> enter one of: hasNext, next, remove, quit. </tt><i>hasNext</i>
+<pre>hasNext() returned true
+</pre>
+<br><tt> enter one of: hasNext, next, remove, quit. </tt><i>next</i>
+<pre>next() returned "Foo"
+</pre>
+<br><tt> enter one of: hasNext, next, remove, quit. </tt><i>remove</i>
+<pre>item removed
+</pre>
+<br><tt> enter one of: hasNext, next, remove, quit. </tt><i>remove</i>
+<pre>IllegalStateException when calling remove 
+</pre>
+<br><tt> enter one of: hasNext, next, remove, quit. </tt><i>hasNext</i>
+<pre>hasNext() returned false
+</pre>
+<br><tt> enter one of: hasNext, next, remove, quit. </tt><i>quit</i>
+<br><tt> The list is empty.</tt>
+<br><tt> enter one of: add, remove, iterator, quit. </tt><i>remove</i>
+<br><tt> enter one of: position, object. </tt><i>object</i>
+<br><tt> enter string to remove. </tt><i>Foo</i>
+<pre>remove("Foo") returned false
+</pre>
+<tt> The list is empty.</tt>
+<br><tt> enter one of: add, remove, iterator, quit. </tt><i>quit</i>
+<pre>quit, discarding contents of linked list.
+</pre>
+
+<h2>Turning in the Assignment</h2>
+
+Email all the java source code for your assignment
+to the TA following the instructions posted <a href="http://www2.hawaii.edu/%7Ejohnwu/ics211/">here</a>.  Your source
+code must include all the parts of each class, even if the instructor
+or the authors of the textbook originally wrote some of the code.
+
+
+</body></html>

@@ -1,0 +1,70 @@
+
+
+public class HW9Tree<E>  {
+
+private E root;
+
+    /** constructor
+    
+    */
+    public HW9Tree() {
+    
+    
+    
+    }
+
+
+
+
+
+
+/**************************************************************************
+  Inner class (defenition of tree nodes)
+***************************************************************************/
+
+	      /** 
+		* A node in a binary tree 
+		* @author         Edo Biagioni
+		* @lecture        ICS 211 Mar 15 or later
+		* @date           March 14, 2011
+		* @bugs           private class: include this code within a larger class
+		*/
+
+	      private static class BinaryNode<T> {
+		private T item;
+		private BinaryNode<T> left;
+		private BinaryNode<T> right;
+
+
+	      /** 
+		* constructor to build a node with no subtrees
+		* @param the value to be stored by this node
+		*/
+		private BinaryNode(T value) {
+		  item = value;
+		  left = null;
+		  right = null;
+		}
+
+
+	        /** 
+		* constructor to build a node with a specified (perhaps null) subtrees
+		* @param the value to be stored by this node
+		* @param the left subtree for this node
+		* @param the right subtree for this node
+		*/
+		private BinaryNode(T value, BinaryNode<T> l, BinaryNode<T> r) {
+		  item = value;
+		  left = l;
+		  right = r;
+		}
+	      }
+
+	      {
+                   
+fffff
+	      }
+
+/***************************************************************************/
+}  // End of the outer class
+/***************************************************************************/

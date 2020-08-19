@@ -1,0 +1,70 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252"><title>ICS 211 Homework 1</title></head>
+<body>
+
+<center><h1>ICS 211 Homework 1</h1></center>
+<center><h1>Java Review</h1></center>
+
+Write a Java application that:
+
+<ul>
+
+<li> declares a <a href="http://java.sun.com/j2se/1.5.0/docs/api/java/util/Scanner.html">
+<tt>Scanner</tt></a> variable
+
+</li><li> declares an array of 26 <tt>String</tt> values, and initializes
+each array element with the corresponding lowercase letter of the alphabet
+
+</li><li> prompts the user to enter an integer, and uses the
+<tt>Scanner</tt>'s <tt>nextInt</tt> method to obtain that integer from
+the user
+
+</li><li> prints out the corresponding letter from the array, so if the input is
+zero, should print "a", and should print "z" for an input of 25.
+
+</li><li> creates a new array of size 27, puts a string containing a space
+(<tt>" "</tt>) at index 0 in the new array, and copies all the other
+letters to positions 1..26 of the new array.  The simplest way to do
+this is to use <tt>System.arraycopy()</tt>
+
+</li><li> loops through the array, printing each entry as follows:
+<ul>
+<li> if the entry is a vowel (<tt>"a"</tt>, <tt>"e"</tt>, <tt>"i"</tt>,
+<tt>"o"</tt>, <tt>"u"</tt>), it must be printed in uppercase
+</li><li> otherwise, the entry must be printed as is
+</li></ul>
+
+</li><li> computes and prints the number of non-vowel strings at the end of the loop.
+
+<h3>Requirements</h3>
+
+</li><li> The program must catch the InputMismatchException from the call
+to <tt>nextInt</tt>, in which case the program must display an
+appropriate error message and exit the program.
+
+</li><li> The program should catch any other problems with the input, for
+example, a negative input number or a number larger that 26.
+
+</li><li> The loop should work for any size initial array, and should not
+depend on the array size -- you may use <tt>array.length</tt> to find
+out the size of the array.
+
+</li><li> You should memorize the sequence of parameters to
+<a href="http://download.oracle.com/javase/1.5.0/docs/api/java/lang/System.html#arraycopy%28java.lang.Object,%20int,%20java.lang.Object,%20int,%20int%29">
+<tt>System.arraycopy()</tt></a> and their meaning.  This will be useful
+later in the semester (and may appear on quizzes or exams).
+
+</li></ul>
+
+<h2>Turning in the Assignment</h2>
+
+
+<ol>
+<li> <a href="http://www2.hawaii.edu/%7Epsoulier/211/">here</a> for Section 1.
+</li><li> <a href="https://github.com/anthonyjchriste/ics211f13/wiki/Assignment-Policy">here</a> for Section 2.
+</li></ol>
+
+<p> The TAs can be reached <a href="http://www2.hawaii.edu/%7Eesb/2013fall.ics211/ta-oh.html">here</a>.
+
+
+</p></body></html>

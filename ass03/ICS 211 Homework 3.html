@@ -1,0 +1,55 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252"><title>ICS 211 Homework 3</title></head>
+<body>
+
+<center><h1>ICS 211 Homework 3</h1></center>
+
+<center><h1>Searching in an array</h1></center>
+
+<p> Write a class, <tt>ArraySearch&lt;E&gt;</tt> that provides two
+methods:
+
+</p><ul>
+
+<li> <tt>int find (E [] haystack, E needle);</tt>
+
+</li><li> <tt>int first_duplicate (E [] data);</tt>
+
+</li></ul>
+
+<p> The method <tt>find</tt> searches the haystack array to see if any
+of its elements is the same (as determined by the <tt>equals</tt> method)
+as the needle.  If there is a match, <tt>find</tt> returns the index of
+the first match.  Otherwise, <tt>find</tt> throws the
+exception <a href="http://java.sun.com/j2se/1.5.0/docs/api/java/util/MissingResourceException.html"><tt>java.util.MissingResourceException</tt></a>.
+
+</p><p> The method <tt>first_duplicate</tt> searches the data array to see if
+any two different elements of the array are the same, again as determined
+by the <tt>equals</tt> method.  The return value is the index of the
+first duplicate found, or -1 if each of the elements of the array is
+unique, i.e., no element of the array is equal to any other element
+of the array.
+
+</p><p> You will also have to write code to test your <tt>ArraySearch</tt>
+class.  Include this test code with your submission.  This test code
+will not be graded, but it may help the TA give you better feedback.
+
+</p><h2>Algorithm Analysis</h2>
+
+Write up a runtime analysis of each of the two methods, giving the big-O
+of each, and explaining how you got your results.  Send your analysis to
+the TA together with your code.  This part counts for 25% of the grade
+on this assignment.  Even if your code doesn't work, you should do this
+part to the best of your ability.
+
+<h2>Turning in the Assignment</h2>
+
+<ol>
+<li> <a href="http://www2.hawaii.edu/%7Epsoulier/211/">here</a> for Section 1.
+</li><li> <a href="https://github.com/anthonyjchriste/ics211f13/wiki/Assignment-Policy">here</a> for Section 2.
+</li></ol>
+
+<p> The TAs can be reached <a href="http://www2.hawaii.edu/%7Eesb/2013fall.ics211/ta-oh.html">here</a>.
+
+
+</p></body></html>

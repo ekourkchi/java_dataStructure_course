@@ -1,0 +1,68 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252"><title>ICS 211 Homework 7</title></head>
+<body>
+
+<center><h1>ICS 211 Homework 7</h1></center>
+<center><h1>Queue assignment</h1></center>
+
+<p> In this assignment, you implement two classes of generic queues
+that support the following methods:
+
+</p><pre>boolean offer(T value);  // returns true if the insertion succeeds
+T poll();                // returns the first object, or null if there are none
+</pre>
+
+<p>These queues have two special properties:
+
+</p><ol>
+
+<li> any null value given to <tt>offer</tt> must be discarded rather than
+added at the end of the queue, and <tt>offer</tt> must return false.
+
+</li><li> if the value is the same (as determined by calling
+<tt>value.equals(...)</tt>) as any value already in the queue, the
+value should again not be inserted, and <tt>offer</tt> must return
+false.
+
+</li></ol>
+
+<p>The first class you implement must use a linked list to implement
+these queue methods, and the queue grows to whatever size is needed.
+This class should be called <tt>LinkedQueue</tt>.
+
+</p><p>The second class you implement must use an array to implement this
+queue class.  The size of this array should be 10 and never change.
+That is, if <tt>offer</tt> is called to insert an 11th element
+into this queue, <tt>offer</tt> should return false.
+This class should be called <tt>ArrayQueue</tt>.
+
+</p><p> To implement the first queue you may use the generic node class
+(presented in the lectures), or your own similar generic node class.
+The second queue <b>must</b> be implemented using a fixed-size Java
+array.
+
+</p><p> You must also build your own test code to make sure that your
+implementation works.  Turn in your test code together with the two
+classes <tt>LinkedQueue</tt> and <tt>ArrayQueue</tt>.
+
+</p><p>For this project you may use and adapt any of the code presented
+as part of the class, including any code in the book or on the course
+web site.  None of this code will do exactly what is needed for the
+assignment, but you are welcome to adapt it to suit your needs.  If you
+do adapt code from the website or the book, provide a comment clearly
+indicating the source of your material (except you do not need to do this
+for the generic LinkedNode class), specifying the pages in the book or
+the URLs from which you have drawn your inspiration for parts of your code.
+
+</p><h2>Turning in the Assignment</h2>
+
+<ol>
+<li> <a href="http://www2.hawaii.edu/%7Epsoulier/211/">here</a> for Section 1.
+</li><li> <a href="https://github.com/anthonyjchriste/ics211f13/wiki/Assignment-Policy">here</a> for Section 2.
+</li></ol>
+
+<p> The TAs can be reached <a href="http://www2.hawaii.edu/%7Eesb/2013fall.ics211/ta-oh.html">here</a>.
+
+
+
+</p></body></html>

@@ -1,0 +1,153 @@
+******************************************************
+
+Author: Ehsan Kourkchi
+Date: November 2013
+Homework: 10
+Source: http://www2.hawaii.edu/~esb/2013fall.ics211/hw10.html
+email: ehsan@ifa.hawaii.edu
+
+******************************************************
+
+This program uses a Min-heap to implement the priority queue.
+The unit of time is 1/10 of hour or any long integer number.
+This version is not supporting the combination of hour, minute and second for now.
+
+The Driver takes the file "input.txt" and prints out the proper schedule.
+The output list of the scheduled task is stored in this file as well: mySchedule.txt
+
+This program also prints the resulting schedule as well as the time spent to add and remove the records into the Heap
+on the screen.
+
+
+
+    To compile the program:
+     > javac Driver.java
+     
+    To run the program:
+     > java Driver
+
+
+
+Please find a list of the files and their content as following:
+***************************
+
+ File: Record.java
+ Main class: Record
+
+ Public methods:
+    Record()   // Constructor
+    Record(E data, long deadline, long duration)   // Constructor
+    boolean equals(Record<E> record)
+    int compare(Record<E> rec1, Record<E> rec2)
+    String toString()
+   
+***************************
+
+ File: MinHeap.java
+ Main class: MinHeap
+
+ Public methods:
+   MinHeap(int initialCapacity, Comparator<E> comparator)   // Constructor
+   boolean add(E newelement)
+   E remove() throws java.util.NoSuchElementException
+   public void printMe()
+  
+ Private methods:
+   int reheapify(int index, int counter)
+   void swap(int p, int q)
+   int max(int p, int q)
+   int min(int p, int q)
+   int compare(E left, E right)
+
+***************************
+
+ File: PriQueue.java
+ Main class: PriQueue
+ 
+ Public methods:
+    PriQueue(int initialCapacity, Comparator<E> comparator)   // Constructor
+    boolean add(E record)
+    E poll()
+    void printMe()
+   
+***************************
+
+ File: Driver.java
+ Main class: Driver
+
+ Public methods:
+    static void main(String [] argv) throws IOException
+   
+ Private methods:  
+    static void add(String task, long deadline, long duration)
+    static void done(Record<String> Record)
+   
+***************************
+
+
+
+***************************
+
+ File: input.txt
+ Source: http://www2.hawaii.edu/~esb/2013fall.ics211/hw11test.txt
+ Time unit: this example file uses 1/10 of an hour as the unit
+ 
+ Content:
+++++++++++++++++++++++++++++++
+schedule sleep 80 80
+schedule breakfast 90 5
+run 85
+schedule email 100 20
+run 100
+schedule dinner 190 10
+schedule lunch 130 5
+schedule exercise 180 20
+schedule class 150 12
+schedule study 120 10
+schedule studyAgain 240 30
+run 230
+run 240
+++++++++++++++++++++++++++++++
+  
+
+  
+***************************
+
+Resulting Schedule: mySchedule.txt
+ 
+ Content:
+++++++++++++++++++++++++++++++
+0: adding sleep with deadline 80 and duration 80
+0: adding breakfast with deadline 90 and duration 5
+0: busy with sleep with deadline 80 and duration 80
+80: done with sleep
+80: busy with breakfast with deadline 90 and duration 5
+85: done with breakfast
+85: adding email with deadline 100 and duration 20
+85: busy with email with deadline 100 and duration 20
+105: adding email with deadline 100 and duration 5
+100: adding dinner with deadline 190 and duration 10
+100: adding lunch with deadline 130 and duration 5
+100: adding exercise with deadline 180 and duration 20
+100: adding class with deadline 150 and duration 12
+100: adding study with deadline 120 and duration 10
+100: adding studyAgain with deadline 240 and duration 30
+100: busy with email with deadline 100 and duration 5
+105: done with email (late)
+105: busy with study with deadline 120 and duration 10
+115: done with study
+115: busy with lunch with deadline 130 and duration 5
+120: done with lunch
+120: busy with class with deadline 150 and duration 12
+132: done with class
+132: busy with exercise with deadline 180 and duration 20
+152: done with exercise
+152: busy with dinner with deadline 190 and duration 10
+162: done with dinner
+162: busy with studyAgain with deadline 240 and duration 30
+192: done with studyAgain
+++++++++++++++++++++++++++++++
+
+
+
+
